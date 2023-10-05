@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>留言板</title>
+</head>
+<body>
+<h1>欢迎来到留言板</h1>
+<form action="submit_message.php" method="post">
+<p>姓名：<input type="text" name="name" required></p>
+<p>留言：<br><textarea name="message" rows="5" cols="30" required></textarea></p>
+<p><input type="submit" value="提交"></p>
+</form>
+<?php
+// 输出所有留言
+$messages = array(
+array("name"=>"张三", "message"=>"今天天气真好！"),
+array("name"=>"李四", "message"=>"PHP编程好玩！"),
+);
+foreach($messages as $msg) {
+echo "<hr>\n";
+echo "<p><strong>{$msg['name']} :</strong> {$msg['message']}</p>\n";
+}
+?>
+</body>
+</html>
